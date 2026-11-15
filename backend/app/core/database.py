@@ -4,10 +4,16 @@ from sqlmodel import SQLModel, Session, create_engine
 
 from app.core.config import settings
 
+from app.modules.usuarios.models import Usuario as _Usuario
+from app.modules.categorias.models import Categoria as _Categoria
+from app.modules.productos.models import Producto as _Producto
+from app.modules.pedidos.models import (
+    Pedido as _Pedido,
+    DetallePedido as _DetallePedido,
+)
+
 
 # Configuración específica para SQLite.
-# La consigna permite utilizar SQLite durante el desarrollo
-# cambiando DATABASE_URL.
 connect_args = {}
 
 if settings.DATABASE_URL.startswith("sqlite"):
