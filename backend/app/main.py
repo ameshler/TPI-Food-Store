@@ -14,7 +14,8 @@ from app.modules.pedidos.models import DetallePedido as _DetallePedido
 # Routers de la aplicación.
 from app.modules.auth.router import router as auth_router
 from app.modules.usuarios.router import router as usuarios_router
-
+from app.modules.categorias.router import router as categorias_router
+from app.modules.productos.router import router as productos_router
 
 app = FastAPI(
     title="Food Store API",
@@ -40,6 +41,8 @@ api_router = APIRouter(prefix="/api/v1")
 # Incorporamos los módulos.
 api_router.include_router(auth_router)
 api_router.include_router(usuarios_router)
+api_router.include_router(categorias_router)
+api_router.include_router(productos_router)
 
 # Registramos el router principal en FastAPI.
 app.include_router(api_router)
