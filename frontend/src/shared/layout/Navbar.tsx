@@ -1,12 +1,17 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 import { useAuthStore } from '../../store/authStore'
+import { useCartStore } from '../../store/cartStore'
 
 export function Navbar() {
   const user = useAuthStore((state) => state.user)
   const logout = useAuthStore((state) => state.logout)
 
   const navigate = useNavigate()
+
+  const cantidadItems = useCartStore((state) =>
+    state.items.reduce((total, item) => total + item.cantidad, 0),
+    )
 
   const handleLogout = async () => {
     try {
@@ -40,7 +45,7 @@ export function Navbar() {
         </NavLink>
 
         <NavLink to="/carrito" className={navLinkClass}>
-          Carrito
+          Carrito ({cantidadItems})
         </NavLink>
 
         {user && (

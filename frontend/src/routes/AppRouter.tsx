@@ -10,6 +10,7 @@ import { RegisterPage } from '../features/auth/pages/RegisterPage'
 
 import { MainLayout } from '../shared/layout/MainLayout'
 import { PlaceholderPage } from '../shared/components/PlaceholderPage'
+import { CatalogoPage } from '../features/productos/pages/CatalogoPage'
 
 import { ProtectedRoute } from './ProtectedRoute'
 
@@ -23,15 +24,7 @@ export function AppRouter() {
 
         {/* Aplicación principal */}
         <Route element={<MainLayout />}>
-          <Route
-            index
-            element={
-              <PlaceholderPage
-                title="Catálogo"
-                description="Aquí se mostrarán los productos disponibles."
-              />
-            }
-          />
+          <Route index element={<CatalogoPage />} />
 
           <Route
             path="carrito"
