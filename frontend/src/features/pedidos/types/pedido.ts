@@ -43,3 +43,9 @@ export interface PedidosPaginados {
   total: number
   items: Pedido[]
 }
+
+export interface PedidosFiltros {
+  skip: number
+  limit: number
+  estado?: EstadoPedido
+}

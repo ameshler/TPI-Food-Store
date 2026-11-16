@@ -13,6 +13,7 @@ import { PlaceholderPage } from '../shared/components/PlaceholderPage'
 import { CatalogoPage } from '../features/productos/pages/CatalogoPage'
 import { CarritoPage } from '../features/pedidos/pages/CarritoPage'
 import { CheckoutPage } from '../features/pedidos/pages/CheckoutPage'
+import { MisPedidosPage } from '../features/pedidos/pages/MisPedidosPage'
 
 import { ProtectedRoute } from './ProtectedRoute'
 
@@ -45,15 +46,8 @@ export function AppRouter() {
           
             <Route path="checkout" element={<CheckoutPage />} />
             
-            <Route
-              path="mis-pedidos"
-              element={
-                <PlaceholderPage
-                  title="Mis pedidos"
-                  description="Aquí se mostrarán los pedidos del usuario."
-                />
-              }
-            />
+            <Route path="mis-pedidos" element={<MisPedidosPage />} />
+            
           </Route>
 
           {/* Rutas exclusivas del administrador */}
