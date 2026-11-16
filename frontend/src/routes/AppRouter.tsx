@@ -11,6 +11,8 @@ import { RegisterPage } from '../features/auth/pages/RegisterPage'
 import { MainLayout } from '../shared/layout/MainLayout'
 import { PlaceholderPage } from '../shared/components/PlaceholderPage'
 import { CatalogoPage } from '../features/productos/pages/CatalogoPage'
+import { CarritoPage } from '../features/pedidos/pages/CarritoPage'
+import { CheckoutPage } from '../features/pedidos/pages/CheckoutPage'
 
 import { ProtectedRoute } from './ProtectedRoute'
 
@@ -26,15 +28,7 @@ export function AppRouter() {
         <Route element={<MainLayout />}>
           <Route index element={<CatalogoPage />} />
 
-          <Route
-            path="carrito"
-            element={
-              <PlaceholderPage
-                title="Carrito"
-                description="Aquí se administrarán los productos seleccionados."
-              />
-            }
-          />
+          <Route path="carrito" element={<CarritoPage />} />
 
           <Route
             path="unauthorized"
@@ -48,16 +42,9 @@ export function AppRouter() {
 
           {/* Rutas que requieren sesión */}
           <Route element={<ProtectedRoute />}>
-            <Route
-              path="checkout"
-              element={
-                <PlaceholderPage
-                  title="Confirmar pedido"
-                  description="Aquí se confirmará la dirección y forma de pago."
-                />
-              }
-            />
-
+          
+            <Route path="checkout" element={<CheckoutPage />} />
+            
             <Route
               path="mis-pedidos"
               element={
