@@ -2,7 +2,7 @@
 
 Sistema web de gestión de pedidos de comida desarrollado como Trabajo Práctico Integrador de Programación IV.
 
-> **Repositorio:** completar con la URL pública de GitHub una vez publicado.
+> **Repositorio:** (https://github.com/ameshler/TPI-Food-Store)
 
 ## Descripción
 
