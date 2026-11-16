@@ -25,3 +25,28 @@ export interface ProductosFiltros {
   categoria_id?: number
   disponible?: boolean
 }
+
+export interface ProductoCreate {
+  categoria_id: number
+  nombre: string
+  descripcion?: string | null
+  precio_base: number
+  imagen_url?: string | null
+  stock: number
+  disponible: boolean
+}
+
+export interface ProductoUpdate {
+  categoria_id?: number
+  nombre?: string
+  descripcion?: string | null
+  precio_base?: number
+  imagen_url?: string | null
+  stock?: number
+  disponible?: boolean
+}
+
+export interface ProductoStockUpdate {
+  stock: number
+  disponible: boolean
+}

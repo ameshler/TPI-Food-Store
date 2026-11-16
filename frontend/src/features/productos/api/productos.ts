@@ -1,6 +1,10 @@
 import axiosInstance from '../../../shared/api/axiosInstance'
 
 import type {
+  Producto,
+  ProductoCreate,
+  ProductoStockUpdate,
+  ProductoUpdate,
   ProductosFiltros,
   ProductosPaginados,
 } from '../types/producto'
@@ -31,4 +35,43 @@ export async function listarProductos(
   )
 
   return response.data
+}
+
+export async function crearProducto(
+  payload: ProductoCreate,
+): Promise<Producto> {
+  const response = await axiosInstance.post<Producto>(
+    '/productos',
+    payload,
+  )
+
+  return response.data
+}
+
+export async function actualizarProducto(
+  id: number,
+  payload: ProductoUpdate,
+): Promise<Producto> {
+  const response = await axiosInstance.put<Producto>(
+    `/productos/${id}`,
+    payload,
+  )
+
+  return response.data
+}
+
+export async function actualizarStockProducto(
+  id: number,
+  payload: ProductoStockUpdate,
+): Promise<Producto> {
+  const response = await axiosInstance.patch<Producto>(
+    `/productos/${id}/stock`,
+    payload,
+  )
+
+  return response.data
+}
+
+export async function eliminarProducto(id: number): Promise<void> {
+  await axiosInstance.delete(`/productos/${id}`)
 }

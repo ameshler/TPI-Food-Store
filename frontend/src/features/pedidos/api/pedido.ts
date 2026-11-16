@@ -5,6 +5,8 @@ import type {
   PedidoCreate,
   PedidosFiltros,
   PedidosPaginados,
+  ResumenPedidos,
+  CambioEstado,
 } from '../types/pedido'
 
 export async function crearPedido(
@@ -46,6 +48,26 @@ export async function cancelarPedido(
 ): Promise<Pedido> {
   const response = await axiosInstance.patch<Pedido>(
     `/pedidos/${pedidoId}/cancelar`,
+  )
+
+  return response.data
+}
+
+export async function obtenerResumenPedidos(): Promise<ResumenPedidos> {
+  const response = await axiosInstance.get<ResumenPedidos>(
+    '/pedidos/resumen',
+  )
+
+  return response.data
+}
+
+export async function cambiarEstadoPedido(
+  pedidoId: number,
+  estado: CambioEstado,
+): Promise<Pedido> {
+  const response = await axiosInstance.patch<Pedido>(
+    `/pedidos/${pedidoId}/estado`,
+    estado,
   )
 
   return response.data

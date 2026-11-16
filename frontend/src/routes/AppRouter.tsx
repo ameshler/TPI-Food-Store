@@ -14,6 +14,11 @@ import { CatalogoPage } from '../features/productos/pages/CatalogoPage'
 import { CarritoPage } from '../features/pedidos/pages/CarritoPage'
 import { CheckoutPage } from '../features/pedidos/pages/CheckoutPage'
 import { MisPedidosPage } from '../features/pedidos/pages/MisPedidosPage'
+import { AdminResumenPage } from '../features/pedidos/pages/AdminResumenPage'
+import { AdminCategoriasPage } from '../features/categorias/pages/AdminCategoriasPage'
+import { AdminProductosPage } from '../features/productos/pages/AdminProductosPage'
+import { AdminPedidosPage } from '../features/pedidos/pages/AdminPedidosPage'
+import { AdminUsuariosPage } from '../features/usuarios/pages/AdminUsuariosPage'
 
 import { ProtectedRoute } from './ProtectedRoute'
 
@@ -47,59 +52,34 @@ export function AppRouter() {
             <Route path="checkout" element={<CheckoutPage />} />
             
             <Route path="mis-pedidos" element={<MisPedidosPage />} />
-            
+
           </Route>
 
           {/* Rutas exclusivas del administrador */}
           <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
             <Route
               path="admin/resumen"
-              element={
-                <PlaceholderPage
-                  title="Resumen administrativo"
-                  description="Indicadores generales del negocio."
-                />
-              }
+              element={<AdminResumenPage />}
             />
 
             <Route
               path="admin/categorias"
-              element={
-                <PlaceholderPage
-                  title="Administrar categorías"
-                  description="Alta, modificación y baja de categorías."
-                />
-              }
+              element={<AdminCategoriasPage />}
             />
 
             <Route
               path="admin/productos"
-              element={
-                <PlaceholderPage
-                  title="Administrar productos"
-                  description="Gestión de productos, stock y disponibilidad."
-                />
-              }
+              element={<AdminProductosPage />}
             />
 
             <Route
               path="admin/pedidos"
-              element={
-                <PlaceholderPage
-                  title="Administrar pedidos"
-                  description="Gestión de pedidos y cambios de estado."
-                />
-              }
+              element={<AdminPedidosPage />}
             />
 
             <Route
               path="admin/usuarios"
-              element={
-                <PlaceholderPage
-                  title="Administrar usuarios"
-                  description="Activación y desactivación de usuarios."
-                />
-              }
+              element={<AdminUsuariosPage />}
             />
           </Route>
         </Route>

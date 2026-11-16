@@ -1,3 +1,4 @@
+
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 import { useAuthStore } from '../../store/authStore'
@@ -11,7 +12,7 @@ export function Navbar() {
 
   const cantidadItems = useCartStore((state) =>
     state.items.reduce((total, item) => total + item.cantidad, 0),
-    )
+  )
 
   const handleLogout = async () => {
     try {
@@ -55,9 +56,27 @@ export function Navbar() {
         )}
 
         {user?.role === 'admin' && (
-          <NavLink to="/admin/resumen" className={navLinkClass}>
-            Panel administrador
-          </NavLink>
+          <>
+            <NavLink to="/admin/resumen" className={navLinkClass}>
+              Resumen
+            </NavLink>
+
+            <NavLink to="/admin/categorias" className={navLinkClass}>
+              Categorías
+            </NavLink>
+
+            <NavLink to="/admin/productos" className={navLinkClass}>
+              Productos
+            </NavLink>
+
+            <NavLink to="/admin/pedidos" className={navLinkClass}>
+              Pedidos
+            </NavLink>
+
+            <NavLink to="/admin/usuarios" className={navLinkClass}>
+              Usuarios
+            </NavLink>
+          </>
         )}
       </nav>
 
