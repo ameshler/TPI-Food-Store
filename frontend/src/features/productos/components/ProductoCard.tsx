@@ -1,5 +1,7 @@
 import type { Producto } from '../types/producto'
+
 import { useCartStore } from '../../../store/cartStore'
+import { useFeedbackStore } from '../../../store/feedbackStore'
 
 interface ProductoCardProps {
   producto: Producto
@@ -14,10 +16,24 @@ const formatoPrecio = new Intl.NumberFormat('es-AR', {
 export function ProductoCard({ producto }: ProductoCardProps) {
   const agregar = useCartStore((state) => state.agregar)
 
+  const yaEstaEnCarrito = useCartStore((state) =>
+    state.items.some((item) => item.producto_id === producto.id),
+  )
+
+  const notifyProductAdded = useFeedbackStore(
+    (state) => state.notifyProductAdded,
+  )
+
   const tieneStock =
     producto.activo &&
     producto.disponible &&
     producto.stock > 0
+
+  const handleAgregarAlCarrito = () => {
+    agregar(producto)
+
+    notifyProductAdded(producto.nombre, yaEstaEnCarrito)
+  }
 
   return (
     <article className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
@@ -68,7 +84,7 @@ export function ProductoCard({ producto }: ProductoCardProps) {
         <button
           type="button"
           disabled={!tieneStock}
-          onClick={() => agregar(producto)}
+          onClick={handleAgregarAlCarrito}
           className="mt-5 w-full rounded-lg bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-700 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500"
         >
           {tieneStock ? 'Agregar al carrito' : 'Sin disponibilidad'}

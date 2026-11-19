@@ -10,6 +10,8 @@ import { RegisterPage } from '../features/auth/pages/RegisterPage'
 
 import { MainLayout } from '../shared/layout/MainLayout'
 import { PlaceholderPage } from '../shared/components/PlaceholderPage'
+import { CartToast } from '../shared/components/CartToast'
+
 import { CatalogoPage } from '../features/productos/pages/CatalogoPage'
 import { CarritoPage } from '../features/pedidos/pages/CarritoPage'
 import { CheckoutPage } from '../features/pedidos/pages/CheckoutPage'
@@ -87,6 +89,9 @@ export function AppRouter() {
         {/* Rutas inexistentes */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+
+      {/* Notificaciones globales */}
+      <CartToast />
     </BrowserRouter>
   )
 }
