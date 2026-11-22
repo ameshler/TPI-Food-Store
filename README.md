@@ -1,8 +1,8 @@
 # Food Store
 
-Sistema web de gestión de pedidos de comida desarrollado como Trabajo Práctico Integrador de Programación IV.
+Sistema web de gestión de pedidos de comida desarrollado como Trabajo Práctico Integrador de Programación IV de la Tecnicatura Universitaria en Programación de UTN.
 
-> **Repositorio:** (https://github.com/ameshler/TPI-Food-Store)
+> **Repositorio:** [TPI-Food-Store](https://github.com/ameshler/TPI-Food-Store)
 
 ## Video de demostración
 
@@ -86,12 +86,14 @@ Los comandos siguientes están escritos para PowerShell en Windows. Ejecutar los
 
 ### 1. Obtener el proyecto
 
+Clonar el repositorio público:
+
 ```powershell
 git clone https://github.com/ameshler/TPI-Food-Store.git
 cd TPI-Food-Store
 ```
 
-Reemplazar `<URL_PUBLICA_DEL_REPOSITORIO>` por la URL del repositorio publicado en GitHub. Si ya se tiene el proyecto descargado, ingresar directamente a su carpeta raíz.
+Si el proyecto ya está descargado, ingresar directamente a la carpeta raíz del repositorio.
 
 ### 2. Crear la base de datos PostgreSQL
 
@@ -241,7 +243,7 @@ Las rutas administrativas están protegidas por rol. La API también valida la a
 ## Estructura general
 
 ```text
-TPI-P4/
+TPI-Food-Store/
 ├── backend/
 │   ├── app/
 │   │   ├── core/          # Configuración, seguridad, DB y Unit of Work
@@ -250,6 +252,7 @@ TPI-P4/
 │   ├── .env.example
 │   └── requirements.txt
 ├── frontend/
+│   ├── public/            # Recursos estáticos e imágenes
 │   ├── src/
 │   │   ├── features/      # Funcionalidades organizadas por módulo
 │   │   ├── routes/        # Configuración de rutas
