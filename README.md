@@ -4,6 +4,14 @@ Sistema web de gestión de pedidos de comida desarrollado como Trabajo Práctico
 
 > **Repositorio:** (https://github.com/ameshler/TPI-Food-Store)
 
+## Video de demostración
+
+Se presenta el funcionamiento integral de FoodStore, incluyendo el registro de un cliente, la compra de productos, la gestión administrativa, la cancelación de pedidos y la restitución automática del stock.
+
+**Duración:** 12 minutos y 43 segundos.
+
+**Enlace:** [Ver video de demostración en YouTube](https://youtu.be/PGIMQwGWhTE)
+
 ## Descripción
 
 Food Store permite consultar un catálogo de productos, gestionar un carrito de compras, confirmar pedidos y consultar su estado. Incluye un panel de administración para gestionar categorías, productos, inventario, pedidos y usuarios.
