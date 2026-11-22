@@ -79,8 +79,8 @@ Los comandos siguientes están escritos para PowerShell en Windows. Ejecutar los
 ### 1. Obtener el proyecto
 
 ```powershell
-git clone <URL_PUBLICA_DEL_REPOSITORIO>
-cd TPI-P4
+git clone https://github.com/ameshler/TPI-Food-Store.git
+cd TPI-Food-Store
 ```
 
 Reemplazar `<URL_PUBLICA_DEL_REPOSITORIO>` por la URL del repositorio publicado en GitHub. Si ya se tiene el proyecto descargado, ingresar directamente a su carpeta raíz.

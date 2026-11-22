@@ -13,7 +13,7 @@ import { EstadoVacio } from '../../../shared/components/EstadoVacio'
 import { EstadoError } from '../../../shared/components/EstadoError'
 import { handleApiError } from '../../../shared/api/handleApiError'
 
-const LIMITE_POR_PAGINA = 12
+const LIMITE_POR_PAGINA = 4
 
 export function CatalogoPage() {
   const [textoBusqueda, setTextoBusqueda] = useState('')
